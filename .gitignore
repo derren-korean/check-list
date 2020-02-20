@@ -31,5 +31,5 @@ npm-debug.log*
 /www
 /src/assets
 /src/environments
-
+/e2e
 package-lock\.json
