@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      생성
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">만들기</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid *ngIf="overviewText">
+    <ion-row>
+      <ion-col>{{overviewText}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-setting-helper (settingSelected)="setSettingValues($event)"></app-setting-helper>
+  <app-working-info *ngIf="overviewText"></app-working-info>
+
+</ion-content>

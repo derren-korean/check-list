@@ -1,0 +1,9 @@
+<div *ngIf="date else dayTime">
+  <div *ngIf="monthOfLocations">
+    <app-today-schedule-display [day]="weekOfLocations.day" [locations]="weekOfLocations.locations" [deviceLocations]="weekOfDeviceLocations"></app-today-schedule-display>
+    <app-today-schedule-display [day]="monthOfLocations.date" [locations]="monthOfLocations.locations" [deviceLocations]="monthOfDeviceLocations"></app-today-schedule-display>
+  </div>
+</div>
+<ng-template #dayTime>
+  주간 근무 표
+</ng-template>
