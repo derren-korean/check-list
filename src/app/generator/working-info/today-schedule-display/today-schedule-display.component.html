@@ -1,0 +1,22 @@
+<ion-item-group>
+  <ion-item-divider>
+    <ion-label>
+      {{day}}
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-item>
+    <ion-label>{{locations}}</ion-label>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let device of deviceLocations">
+      <ion-grid>
+        <ion-row>
+          <ion-col>{{device.category}}</ion-col>
+          <ion-col>{{device.count}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-item-group>

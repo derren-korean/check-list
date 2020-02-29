@@ -1,0 +1,55 @@
+<ion-button *ngIf="optionForm.valid && isSubmitted" type="button" color="danger" expand="block" (click)="modify()">수정하기</ion-button>
+
+<form *ngIf="!isSubmitted" [formGroup]="optionForm" (ngSubmit)="submitForm()">
+
+  <ion-item lines="full">
+    <ion-label position="floating">날짜</ion-label>
+    <ion-datetime formControlName="workDate" min="2020-02-11" displayFormat="YYYY-MM-DD"></ion-datetime>
+  </ion-item>
+
+  <ion-radio-group formControlName="workTimeGroup" lines="full">
+    <ion-list-header>
+      <ion-label>주/야간</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>주간</ion-label>
+      <ion-radio slot="start" value="day" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>야간</ion-label>
+      <ion-radio slot="start" value="night"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <div>
+          <ion-input formControlName="leaderName" type="text" placeholder="조장이름"></ion-input>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>외</label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-input formControlName="numberOfworker" type="number" placeholder="인원수"></ion-input>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>명</label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item lines="full">
+    <ion-label position="floating">날짜</ion-label>
+    <ion-datetime formControlName="startTime" displayFormat="HH:mm" placeholder="시작시간"></ion-datetime>
+  </ion-item>
+
+  <ion-button type="submit" color="danger" expand="block" [disabled]="!optionForm.valid">설정하기</ion-button>
+</form>
